@@ -1,0 +1,19 @@
+/* bug.css */
+.container::before {
+  content: "This is a very long string that might cause issues if it's too long.  This is a very long string that might cause issues if it's too long.  This is a very long string that might cause issues if it's too long.";
+  display: block; /*This will cause the generated content to take up space*/ 
+}
+
+/* bugSolution.css */
+.container::before {
+  content: "Optimized Content";
+  display: block;
+}
+/*Solution: Simplify the content*/
+
+.container {
+  width: 200px;
+  height: 100px;
+  overflow: auto; /*Handle potential overflow better*/
+}
+/*Solution: Handle Overflow*/
